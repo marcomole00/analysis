@@ -531,11 +531,20 @@ have h (Y : {RV P >-> R}) :
   rewrite exprnN expfV exprz_inv opprK -exprnP.
   apply: (@le_trans _ _ ('E_P[(@GRing.exp R ^~ 2%N \o normr) \o Y])).
     apply: (@markov Y (@GRing.exp R ^~ 2%N)) => //.
+<<<<<<< HEAD
+=======
+    - by apply: measurable_fun_exprn'.
+>>>>>>> fc79f72 (adapted proof to new formulation of measurable_fun_exprn)
     - by move=> r; apply: sqr_ge0.
     - move=> x y; rewrite !inE !mksetE !in_itv/= !andbT => x0 y0.
       by rewrite ler_sqr.
   apply: expectation_le => //.
+<<<<<<< HEAD
     - by apply: measurableT_comp => //; exact: measurableT_comp.
+=======
+  - apply: measurable_funT_comp => //; apply: measurable_funT_comp => //.
+    by apply: measurable_fun_exprn'.
+>>>>>>> fc79f72 (adapted proof to new formulation of measurable_fun_exprn)
   - by move=> x /=; apply: sqr_ge0.
   - by move=> x /=; apply: sqr_ge0.
   - by apply/aeW => t /=; rewrite real_normK// num_real.
